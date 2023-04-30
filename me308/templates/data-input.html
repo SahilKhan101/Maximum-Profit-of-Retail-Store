@@ -1,0 +1,719 @@
+{% load static %}
+<html>
+<head>
+
+
+    <title>ME308 Discount Strategy</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-81222017-1"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Scripts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<!--    @include('2021.competitions.scss')-->
+
+</head>
+<style>
+    @font-face {
+            font-family: Bebas Kai;
+            src:url({% static 'resources/fonts/BebasKai.ttf' %});
+        }
+        @font-face {
+            font-family: Avenir LT Pro;
+            src:url({% static 'resources/fonts/AvenirLTProLight.otf' %});
+        }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+body{
+    background-image: url("{% static 'resources/images/bg3.jpg' %}");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Avenir LT Pro';
+}
+
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+
+.reg-box{
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 0px;
+    border-bottom: 0.5px solid white;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    width: 100%;
+    height: 35px;
+    letter-spacing: 1px;
+    /* color: white; */
+    font-size: 16px;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+    color: white;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.baap {
+    background: rgba(26, 26, 26, 0.4);
+    backdrop-filter: blur(38px);
+    -webkit-backdrop-filter: blur(38px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    width: 956px;
+    height: max-content;
+    margin: auto;
+    border: 1px solid black;
+    border-image: linear-gradient(to bottom, #FFFFFF, transparent);
+    overflow: hidden;
+    /* border-radius:5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px; */
+    /* border-right: 1px solid black;
+    border-image: linear-gradient(to bottom, black, transparent); */
+    border-image-slice: 1;
+    border-collapse: collapse;
+
+    /* padding: 25px; */
+}
+
+.myheading {
+    padding-top: 15px;
+    padding-bottom: 10px;
+    font-family: 'Avenir LT Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 24px;
+    /* identical to box height */
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.long_box {
+    font-size: 15px;
+    width: 356px;
+    margin: auto;
+    padding: 0px;
+    margin-bottom: 10px;
+    color: #FFFFFF;
+}
+
+.first_name {
+    color: #FFFFFF;
+    font-size: 15px;
+    width: 165px;
+    margin-left: auto;
+    margin-bottom: 10px;
+}
+
+.last_name {
+    color: #FFFFFF;
+    font-size: 15px;
+    width: 165px;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+.teb {
+    color: #FFFFFF;
+    font-size: 15px;
+    width: 50px;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+
+.mybutton {
+    background-color: rgba(255, 255, 255, 0);
+    letter-spacing: 1px;
+    /* color: white; */
+    font-size: 16px;
+    border-radius: 5px;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+
+.anti-america {
+    color: white;
+    background: #326872;
+    backdrop-filter: blur(38px);
+    -webkit-backdrop-filter: blur(38px);
+}
+
+.this-is-america {
+    background: #326872;
+    backdrop-filter: blur(38px);
+    -webkit-backdrop-filter: blur(38px);
+}
+.submit{
+    color: #FFFFFF;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    border-radius: 5px;
+    border: 1px solid #FFFFFF;
+}
+
+hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid #FFFFFF;
+        margin: 1em 0;
+        padding: 0;
+    }
+
+
+/*select#reg{*/
+/*    border: 0px;*/
+/*    outline: 0px*/
+/*}*/
+
+textarea:focus, .reg-box:focus{
+    outline:none;
+}
+
+/*.reg-box:-webkit-autofill {*/
+/*    appearance: menulist-button;*/
+/*    background-image: none !important;*/
+/*    background-color: -internal-light-dark(transparent) !important;*/
+/*    color: fieldtext !important;*/
+/*}*/
+
+.reg-box:-webkit-autofill,
+.reg-box:-webkit-autofill:hover,
+.reg-box:-webkit-autofill:focus,
+.reg-box:-webkit-autofill:active  {
+    /*-webkit-box-shadow: 0 0 0 30px white inset !important;*/
+    transition: background-color 5000s;
+    -webkit-text-fill-color: #fff !important;
+}
+
+</style>
+<body>
+
+<nav>
+    {% include "inc/nav.html" %}
+</nav>
+
+
+<div style="margin-top: 7rem;" ></div>
+
+<form action="{% url 'data-input' %}" method="post" id="reg-form">
+    {%csrf_token %}
+    <div class="baap">
+    <div class="row">
+    <div class="col-12">
+        <div class="myheading">Past Discount Impact</div>
+        <br>
+        <div class="col-12">
+
+            <div class="row">
+                <div class="col-2">
+                    <div class="teb">
+                        
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="teb">
+                        D1
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="teb">
+                        D2
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="teb">
+                        D3
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="teb">
+                        D4
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="teb">
+                        D5
+                    </div>
+                </div>
+            </div>
+
+            <hr style=" width: 100% !important; color: #FFFFFF !important;" >
+
+            <div class="row">
+                <div class="col-2">
+                    <div class="teb">
+                        P1
+                    </div>
+                </div>
+                <!-- <input type="number" class="reg-box" name="t10" value="10" required type="hidden"> -->
+                <div class="col-2">
+                    <div class="teb">
+                        <input type="number" class="reg-box" name="t11" value="12" required>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="teb">
+                        <input type="number" class="reg-box" name="t12" value="12" required>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="teb">
+                        <input type="number" class="reg-box" name="t13" value="13" required>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="teb">
+                        <input type="number" class="reg-box" name="t14" value="15" required>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="teb">
+                        <input type="number" class="reg-box" name="t15" value="18" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-2">
+                    <div class="teb">
+                        P2
+                    </div>
+                </div>
+                <!-- <input type="number" class="reg-box" name="t20" value="8" required> -->
+                <div class="col-2">
+                    <div class="teb">
+                        <input type="number" class="reg-box" name="t21" value="8" required>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="teb">
+                        <input type="number" class="reg-box" name="t22" value="8" required>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="teb">
+                        <input type="number" class="reg-box" name="t23" value="8" required>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="teb">
+                        <input type="number" class="reg-box" name="t24" value="9" required>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="teb">
+                        <input type="number" class="reg-box" name="t25" value="10" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-2">
+                    <div class="teb">
+                        P3
+                    </div>
+                </div>
+                <!-- <input type="number" class="reg-box" name="t30" value="12" required> -->
+                <div class="col-2">
+                    <div class="teb">
+                        <input type="number" class="reg-box" name="t31" value="15" required>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="teb">
+                        <input type="number" class="reg-box" name="t32" value="18" required>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="teb">
+                        <input type="number" class="reg-box" name="t33" value="19" required>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="teb">
+                        <input type="number" class="reg-box" name="t34" value="21" required>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="teb">
+                        <input type="number" class="reg-box" name="t35" value="23" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-2">
+                    <div class="teb">
+                        P4
+                    </div>
+                </div>
+                <!-- <input type="number" class="reg-box" name="t40" value="5" required> -->
+                <div class="col-2">
+                    <div class="teb">
+                        <input type="number" class="reg-box" name="t41" value="5" required>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="teb">
+                        <input type="number" class="reg-box" name="t42" value="6" required>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="teb">
+                        <input type="number" class="reg-box" name="t43" value="7" required>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="teb">
+                        <input type="number" class="reg-box" name="t44" value="7" required>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="teb">
+                        <input type="number" class="reg-box" name="t45" value="8" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-2">
+                    <div class="teb">
+                        P5
+                    </div>
+                </div>
+                <!-- <input type="number" class="reg-box" name="t50" value="10" required> -->
+                <div class="col-2">
+                    <div class="teb">
+                        <input type="number" class="reg-box" name="t51" value="13" required>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="teb">
+                        <input type="number" class="reg-box" name="t52" value="15" required>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="teb">
+                        <input type="number" class="reg-box" name="t53" value="18" required>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="teb">
+                        <input type="number" class="reg-box" name="t54" value="20" required>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="teb">
+                        <input type="number" class="reg-box" name="t55" value="22" required>
+                    </div>
+                </div>
+            </div>
+
+
+            <br><br>
+
+
+            <div class="myheading">Month</div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="long_box">
+                        <select name="month" type="text" class="reg-box">
+                            <option class="this-is-america" disabled="disabled" selected="selected" value=""></option>
+                            <option class="anti-america" value="Jan">Jan</option>
+                            <option class="anti-america" value="Feb">Feb</option>
+                            <option class="anti-america" value="Mar">Mar</option>
+                            <option class="anti-america" value="Apr">Apr</option>
+                            <option class="anti-america" value="Female">May</option>
+                            <option class="anti-america" value="Female">Jun</option>
+                            <option class="anti-america" value="Female">Jul</option>
+                            <option class="anti-america" value="Female">Aug</option>
+                            <option class="anti-america" value="Female">Sep</option>
+                            <option class="anti-america" value="Female">Oct</option>
+                            <option class="anti-america" value="Female">Nov</option>
+                            <option class="anti-america" value="Female">Dec</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
+            <br><br>
+
+            <div class="myheading">Average Selling Price</div>
+            <br>
+            <div class="col-12">
+    
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-2">
+                        <div class="teb">
+                            P1
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="teb">
+                            P2
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="teb">
+                            P3
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="teb">
+                            P4
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="teb">
+                            P5
+                        </div>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+    
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-2">
+                        <div class="teb">
+                            <input type="number" class="reg-box" name="p1" value="10" required>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="teb">
+                            <input type="number" class="reg-box" name="p2" value="6" required>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="teb">
+                            <input type="number" class="reg-box" name="p3" value="17" required>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="teb">
+                            <input type="number" class="reg-box" name="p4" value="7" required>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="teb">
+                            <input type="number" class="reg-box" name="p5" value="20" required>
+                        </div>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+
+            </div>
+
+
+
+            <br><br>
+
+            <div class="myheading">Base Units</div>
+            <br>
+            <div class="col-12">
+    
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-2">
+                        <div class="teb">
+                            P1
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="teb">
+                            P2
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="teb">
+                            P3
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="teb">
+                            P4
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="teb">
+                            P5
+                        </div>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+    
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-2">
+                        <div class="teb">
+                            <input type="number" class="reg-box" name="n1" value="50" required>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="teb">
+                            <input type="number" class="reg-box" name="n2" value="50" required>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="teb">
+                            <input type="number" class="reg-box" name="n3" value="50" required>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="teb">
+                            <input type="number" class="reg-box" name="n4" value="50" required>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="teb">
+                            <input type="number" class="reg-box" name="n5" value="50" required>
+                        </div>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+                
+            </div>
+
+
+
+            <br><br>
+
+            <div class="myheading">Average Percentage Profit</div>
+            <br>
+            <div class="col-12">
+    
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-2">
+                        <div class="teb">
+                            P1
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="teb">
+                            P2
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="teb">
+                            P3
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="teb">
+                            P4
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="teb">
+                            P5
+                        </div>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+    
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-2">
+                        <div class="teb">
+                            <input type="number" class="reg-box" name="pr1">
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="teb">
+                            <input type="number" class="reg-box" name="pr2">
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="teb">
+                            <input type="number" class="reg-box" name="pr3">
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="teb">
+                            <input type="number" class="reg-box" name="pr4">
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="teb">
+                            <input type="number" class="reg-box" name="pr5">
+                        </div>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+                
+            </div>
+
+
+
+
+            <!-- <div class="col-12">
+                <div class="long_box">
+                    Residential Pin code
+                    <input type="number" class="reg-box" name="pincode" required>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="long_box">
+                    Residential Pin code
+                    <input type="number" class="reg-box" name="pincode" required>
+                </div>
+            </div> -->
+
+
+        </div>
+    </div>
+
+
+    </div>
+
+    <br><br>
+
+        <div class="mybutton">
+          <input type="submit" class="submit" value="    Predict Strategy    ">
+        </div>
+
+</div>
+</form>
+
+<div style="margin-top: 5rem;" ></div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
+

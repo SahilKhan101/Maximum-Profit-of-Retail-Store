@@ -7,7 +7,7 @@ Sahil Khan -
   <img src="https://contrib.rocks/image?repo=SahilKhan101/Maximum-Profit-of-Retail-Store" />
 </a>
 
-<br>
+&nbsp;
 
 Sreetam Tripathy
 <a href="https://github.com/confoosed-meow-meow">
